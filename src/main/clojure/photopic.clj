@@ -1,10 +1,10 @@
 (ns photopic
-  (:use compojure.core ring.adapter.jetty)
+  (:use compojure.core ring.util.response ring.adapter.jetty)
   (:gen-class)
 )
 
 (defroutes app
-  (GET "/" [] "<html><body><h1>Hello world!</h1></body></html>")
+  (GET "/" [] (resource-response "templates/index.html"))
 )
 
 (defn run []
