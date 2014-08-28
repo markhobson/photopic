@@ -1,5 +1,6 @@
 (ns photopic
   (:use
+    clostache.parser
     compojure.core
     ring.adapter.jetty
     ring.util.response
@@ -9,7 +10,7 @@
 
 (defroutes app
   (GET "/" []
-    (resource-response "templates/index.html")
+    (render-resource "templates/index.mustache" {:name "Photopic"})
   )
 )
 
