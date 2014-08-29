@@ -5,12 +5,21 @@
 		<link rel="stylesheet" href="webjars/bootstrap/3.2.0/css/bootstrap.min.css"/>
 	</head>
 	<body>
-		<h1>Photopic</h1>
-		<p>The following photo topics are available:</p>
-		<ul>
-			{{#topic}}
-				<li>{{name}}</li>
-			{{/topics}}
-		</ul>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">Photopic</a>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<h1>Photopic</h1>
+			<p>The following photo topics are available:</p>
+			<ul>
+				{{#topic}}
+					<li>{{name}}</li>
+				{{/topics}}
+			</ul>
+		</div>
 	</body>
 </html>
