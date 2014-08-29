@@ -11,13 +11,13 @@
       {:name "Banana"}
       {:name "Carrot"}
     ]}
-    [:navbar]
+    [:head :navbar]
   )
 )
 
 (defn topic-create-form-response []
   (render-page "topic-create"
     {:topic {}}
-    [:navbar]
+    [:head :navbar]
   )
 )
