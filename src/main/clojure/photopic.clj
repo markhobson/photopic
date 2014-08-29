@@ -8,9 +8,13 @@
   (:gen-class)
 )
 
+(defn index-response []
+  (render-resource "templates/index.mustache" {:name "Photopic"})
+)
+
 (defroutes app
   (GET "/" []
-    (render-resource "templates/index.mustache" {:name "Photopic"})
+    (index-response)
   )
 )
 
