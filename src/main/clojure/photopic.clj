@@ -13,7 +13,13 @@
 )
 
 (defn topics-response []
-  (render-resource "templates/topics.mustache")
+  (render-resource "templates/topics.mustache" {
+    :topic [
+      {:name "Apple"}
+      {:name "Banana"}
+      {:name "Carrot"}
+    ]
+  })
 )
 
 (defroutes app
