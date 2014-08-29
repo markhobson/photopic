@@ -33,7 +33,10 @@
 )
 
 (defroutes app
-  (wrap-resource app-routes "META-INF/resources")
+  (->
+    app-routes
+    (wrap-resource "META-INF/resources")
+  )
 )
 
 (defn run []
