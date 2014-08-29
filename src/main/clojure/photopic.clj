@@ -9,12 +9,19 @@
 )
 
 (defn index-response []
-  (render-resource "templates/index.mustache" {:name "Photopic"})
+  (redirect "/topics")
+)
+
+(defn topics-response []
+  (render-resource "templates/topics.mustache" {:name "Photopic"})
 )
 
 (defroutes app
   (GET "/" []
     (index-response)
+  )
+  (GET "/topics" []
+    (topics-response)
   )
 )
 
