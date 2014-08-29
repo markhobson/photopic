@@ -13,7 +13,7 @@
 )
 
 (defn topics-response []
-  (render-resource "templates/topics.mustache" {:name "Photopic"})
+  (render-resource "templates/topics.mustache")
 )
 
 (defroutes app
