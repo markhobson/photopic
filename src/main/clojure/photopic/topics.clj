@@ -5,15 +5,15 @@
   )
 )
 
-(def topics [
+(def topics (atom [
   {:name "Apple"}
   {:name "Banana"}
   {:name "Carrot"}
-])
+]))
 
 (defn topics-response []
   (render-page "topics"
-    {:topic topics}
+    {:topic @topics}
     [:head :navbar]
   )
 )
@@ -25,6 +25,11 @@
   )
 )
 
-(defn topic-create-response []
+(defn topic-create-response [topic]
+  (swap! topics
+    (fn [topics]
+      (conj topics topic)
+    )
+  )
   (redirect "/topics")
 )
