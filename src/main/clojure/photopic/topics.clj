@@ -1,21 +1,23 @@
 (ns photopic.topics
   (:use
-    clostache.parser
+    photopic.support.clostache
   )
 )
 
 (defn topics-response []
-  (render-resource "templates/topics.mustache" {
-    :topic [
+  (render-page "topics"
+    {:topic [
       {:name "Apple"}
       {:name "Banana"}
       {:name "Carrot"}
-    ]
-  })
+    ]}
+    []
+  )
 )
 
 (defn topic-create-form-response []
-  (render-resource "templates/topic-create.mustache" {
-    :topic {}
-  })
+  (render-page "topic-create"
+    {:topic {}}
+    []
+  )
 )
