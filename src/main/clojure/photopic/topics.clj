@@ -5,13 +5,15 @@
   )
 )
 
+(def topics [
+  {:name "Apple"}
+  {:name "Banana"}
+  {:name "Carrot"}
+])
+
 (defn topics-response []
   (render-page "topics"
-    {:topic [
-      {:name "Apple"}
-      {:name "Banana"}
-      {:name "Carrot"}
-    ]}
+    {:topic topics}
     [:head :navbar]
   )
 )
