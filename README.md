@@ -8,7 +8,7 @@ Getting started
 
 To simply run the application:
 
-	$ mvn compile exec:java
+	$ mvn compile clojure:run
 
 Alternatively, to create and run a distributable:
 
