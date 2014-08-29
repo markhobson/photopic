@@ -19,7 +19,7 @@ Or, to run within the Clojure REPL:
 
 	$ mvn process-resources clojure:repl
 
-	user=> (use 'photopic)
+	user=> (use 'photopic.core)
 	user=> (run)
 
 Then visit <http://localhost:8080/>.

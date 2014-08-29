@@ -1,4 +1,4 @@
-(ns photopic
+(ns photopic.core
   (:use
     clostache.parser
     compojure.core

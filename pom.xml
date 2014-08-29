@@ -13,7 +13,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<mainClass>photopic</mainClass>
+		<mainClass>photopic.core</mainClass>
 	</properties>
 
 	<build>
