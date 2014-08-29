@@ -23,6 +23,9 @@
   (GET "/topics/create" []
     (topic-create-form-response)
   )
+  (POST "/topics" []
+    (topic-create-response)
+  )
 )
 
 (defroutes app

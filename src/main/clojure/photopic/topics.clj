@@ -1,6 +1,7 @@
 (ns photopic.topics
   (:use
     photopic.support.clostache
+    ring.util.response
   )
 )
 
@@ -20,4 +21,8 @@
     {:topic {}}
     [:head :navbar]
   )
+)
+
+(defn topic-create-response []
+  (redirect "/topics")
 )
