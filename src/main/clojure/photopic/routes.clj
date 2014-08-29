@@ -1,7 +1,7 @@
 (ns photopic.routes
   (:use
-    clostache.parser
     compojure.core
+    photopic.topics
     ring.middleware.content-type
     ring.middleware.resource
     ring.middleware.not-modified
@@ -11,22 +11,6 @@
 
 (defn index-response []
   (redirect "/topics")
-)
-
-(defn topics-response []
-  (render-resource "templates/topics.mustache" {
-    :topic [
-      {:name "Apple"}
-      {:name "Banana"}
-      {:name "Carrot"}
-    ]
-  })
-)
-
-(defn topic-create-form-response []
-  (render-resource "templates/topic-create.mustache" {
-    :topic {}
-  })
 )
 
 (defroutes app-routes
