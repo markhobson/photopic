@@ -17,11 +17,13 @@
 				<h1>Topics</h1>
 			</div>
 			<p>The following photo topics are available:</p>
-			<ul>
+			<table class="table">
 				{{#topic}}
-					<li>{{name}}</li>
+					<tr>
+						<td>{{name}}</td>
+					</tr>
 				{{/topics}}
-			</ul>
+			</table>
 		</div>
 	</body>
 </html>
