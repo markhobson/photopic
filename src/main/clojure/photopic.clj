@@ -3,6 +3,7 @@
     clostache.parser
     compojure.core
     ring.adapter.jetty
+    ring.middleware.resource
     ring.util.response
   )
   (:gen-class)
@@ -22,13 +23,17 @@
   })
 )
 
-(defroutes app
+(defroutes app-routes
   (GET "/" []
     (index-response)
   )
   (GET "/topics" []
     (topics-response)
   )
+)
+
+(defroutes app
+  (wrap-resource app-routes "META-INF/resources")
 )
 
 (defn run []
