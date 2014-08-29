@@ -25,12 +25,21 @@
   })
 )
 
+(defn topic-create-form-response []
+  (render-resource "templates/topic-create.mustache" {
+    :topic {}
+  })
+)
+
 (defroutes app-routes
   (GET "/" []
     (index-response)
   )
   (GET "/topics" []
     (topics-response)
+  )
+  (GET "/topics/create" []
+    (topic-create-form-response)
   )
 )
 
