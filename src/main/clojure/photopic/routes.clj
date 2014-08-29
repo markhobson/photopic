@@ -17,14 +17,16 @@
   (GET "/" []
     (index-response)
   )
-  (GET "/topics" []
-    (topics-response)
-  )
-  (GET "/topics/create" []
-    (topic-create-form-response)
-  )
-  (POST "/topics" []
-    (topic-create-response)
+  (context "/topics" []
+    (GET "/" []
+      (topics-response)
+    )
+    (GET "/create" []
+      (topic-create-form-response)
+    )
+    (POST "/" []
+      (topic-create-response)
+    )
   )
 )
 
