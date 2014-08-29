@@ -3,7 +3,9 @@
     clostache.parser
     compojure.core
     ring.adapter.jetty
+    ring.middleware.content-type
     ring.middleware.resource
+    ring.middleware.not-modified
     ring.util.response
   )
   (:gen-class)
@@ -36,6 +38,8 @@
   (->
     app-routes
     (wrap-resource "META-INF/resources")
+    (wrap-content-type)
+    (wrap-not-modified)
   )
 )
 
