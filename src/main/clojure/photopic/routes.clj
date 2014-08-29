@@ -21,11 +21,11 @@
     (GET "/" []
       (topics-response)
     )
-    (GET "/create" []
-      (topic-create-form-response)
-    )
     (POST "/" []
       (topic-create-response)
+    )
+    (GET "/create" []
+      (topic-create-form-response)
     )
   )
 )
