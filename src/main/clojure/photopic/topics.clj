@@ -11,15 +11,21 @@
   (swap! id inc)
 )
 
-(def topics (atom [
-  {:id (next-id) :name "Apple"}
-  {:id (next-id) :name "Banana"}
-  {:id (next-id) :name "Carrot"}
-]))
+(def topics (atom (sorted-map)))
+
+(defn- topic-store [topic]
+  (swap! topics
+    assoc (get topic :id) topic
+  )
+)
+
+(topic-store {:id (next-id) :name "Apple"})
+(topic-store {:id (next-id) :name "Banana"})
+(topic-store {:id (next-id) :name "Carrot"})
 
 (defn topics-response []
   (render-page "topics"
-    {:topic @topics}
+    {:topic (vals @topics)}
     [:head :navbar]
   )
 )
@@ -32,8 +38,8 @@
 )
 
 (defn topic-create-response [topic]
-  (swap! topics conj (
-    conj topic [:id (next-id)])
+  (topic-store
+    (conj topic [:id (next-id)])
   )
   (redirect "/topics")
 )
