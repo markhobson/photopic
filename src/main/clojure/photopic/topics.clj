@@ -31,7 +31,7 @@
 
 (defn topics-response []
   (render-page "topics"
-    {:topic (vals @topics)}
+    {:topic (vals @topics) :has-topics (not-empty @topics)}
     [:head :navbar]
   )
 )
