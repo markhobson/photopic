@@ -29,6 +29,13 @@
       (topic-create-form-response)
     )
   )
+  (context "/topic/:id" [id]
+    (let [id (read-string id)]
+      (DELETE "/" []
+        (topic-delete-response id)
+      )
+    )
+  )
 )
 
 (defroutes app

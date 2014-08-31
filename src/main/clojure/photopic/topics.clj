@@ -19,6 +19,12 @@
   )
 )
 
+(defn- topic-delete [id]
+  (swap! topics
+    dissoc id
+  )
+)
+
 (topic-store {:id (next-id) :name "Apple"})
 (topic-store {:id (next-id) :name "Banana"})
 (topic-store {:id (next-id) :name "Carrot"})
@@ -41,5 +47,10 @@
   (topic-store
     (conj topic [:id (next-id)])
   )
+  (redirect "/topics")
+)
+
+(defn topic-delete-response [id]
+  (topic-delete id)
   (redirect "/topics")
 )
