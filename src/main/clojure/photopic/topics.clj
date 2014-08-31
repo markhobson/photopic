@@ -25,10 +25,6 @@
   )
 )
 
-(topic-store {:id (next-id) :name "Apple"})
-(topic-store {:id (next-id) :name "Banana"})
-(topic-store {:id (next-id) :name "Carrot"})
-
 (defn topics-response []
   (render-page "topics"
     {:topic (vals @topics) :has-topics (not-empty @topics)}
