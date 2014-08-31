@@ -32,12 +32,8 @@
 )
 
 (defn topic-create-response [topic]
-  (swap! topics
-    (fn [topics]
-      (conj topics (
-        conj topic [:id (next-id)])
-      )
-    )
+  (swap! topics conj (
+    conj topic [:id (next-id)])
   )
   (redirect "/topics")
 )
