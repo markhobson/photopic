@@ -23,9 +23,7 @@
 )
 
 (defn topic-create-response [topic]
-  (repository/store
-    (conj topic [:id (repository/next-id)])
-  )
+  (repository/store topic)
   (redirect "/topics")
 )
 

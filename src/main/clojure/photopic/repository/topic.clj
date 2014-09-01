@@ -9,8 +9,10 @@
 (def topics (atom (sorted-map)))
 
 (defn store [topic]
-  (swap! topics
-    assoc (get topic :id) topic
+  (let [topic (conj topic [:id (next-id)])]
+    (swap! topics
+      assoc (get topic :id) topic
+    )
   )
 )
 
