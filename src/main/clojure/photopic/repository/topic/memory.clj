@@ -1,4 +1,4 @@
-(ns photopic.repository.topic)
+(ns photopic.repository.topic.memory)
 
 (def ^:private id
   (atom 0)
