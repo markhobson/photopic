@@ -1,4 +1,4 @@
-(ns photopic.routes
+(ns photopic.route.app
   (:use
     compojure.core
     photopic.resource.topic

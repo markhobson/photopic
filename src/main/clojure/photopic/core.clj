@@ -1,6 +1,6 @@
 (ns photopic.core
   (:use
-    photopic.routes
+    photopic.route.app
     ring.adapter.jetty
   )
   (:gen-class)
