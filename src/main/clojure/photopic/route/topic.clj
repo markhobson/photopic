@@ -6,7 +6,7 @@
   )
 )
 
-(defroutes topic-routes
+(defroutes router
   (context "/topics" []
     (GET "/" []
       (topics-response)

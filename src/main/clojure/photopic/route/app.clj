@@ -1,18 +1,20 @@
 (ns photopic.route.app
   (:use
     compojure.core
-    [photopic.route.index :as index]
-    photopic.route.topic
     ring.middleware.content-type
     ring.middleware.params
     ring.middleware.resource
     ring.middleware.not-modified
   )
+  (:require
+    [photopic.route.index :as index]
+    [photopic.route.topic :as topic]
+  )
 )
 
 (defroutes app-routes
   index/router
-  topic-routes
+  topic/router
 )
 
 (defroutes app
