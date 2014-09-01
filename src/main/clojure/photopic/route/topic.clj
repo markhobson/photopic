@@ -2,7 +2,6 @@
   (:use
     compojure.core
     photopic.resource.topic
-    ring.util.response
   )
 )
 
