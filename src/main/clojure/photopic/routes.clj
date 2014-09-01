@@ -2,18 +2,13 @@
   (:use
     compojure.core
     photopic.resource.topic
+    photopic.route.index
     photopic.route.topic
     ring.middleware.content-type
     ring.middleware.params
     ring.middleware.resource
     ring.middleware.not-modified
     ring.util.response
-  )
-)
-
-(defroutes index-routes
-  (GET "/" []
-    (redirect "/topics")
   )
 )
 
