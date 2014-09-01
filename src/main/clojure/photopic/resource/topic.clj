@@ -10,7 +10,7 @@
 
 (defn get-all []
   (let [topics (repository/get-all)]
-    (render-page "topic/topics"
+    (render-page "topic/list"
       {:topic topics
         :has-topics (boolean (not-empty topics))
       }
