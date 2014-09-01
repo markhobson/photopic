@@ -6,7 +6,7 @@
   (swap! id inc)
 )
 
-(def topics (atom (sorted-map)))
+(def ^:private topics (atom (sorted-map)))
 
 (defn get-all []
   (vals @topics)
