@@ -23,7 +23,7 @@
 (defn store [topic]
   (let [topic (set-next-id topic)]
     (swap! topics
-      assoc (get topic :id) topic
+      assoc (:id topic) topic
     )
   )
 )

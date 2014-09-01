@@ -14,14 +14,14 @@
 @(d/transact connection (read-string (slurp (resource "schema/photopic.edn"))))
 
 (defn- dehydrate [model]
-  {:db/id (get model :id)
-    :topic/name (get model :name)
+  {:db/id (:id model)
+    :topic/name (:name model)
   }
 )
 
 (defn- rehydrate [entity]
-  {:id (get entity :db/id)
-    :name (get entity :topic/name)
+  {:id (:db/id entity)
+    :name (:topic/name entity)
   }
 )
 
