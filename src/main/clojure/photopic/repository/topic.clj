@@ -1,8 +1,12 @@
 (ns photopic.repository.topic)
 
-(def ^:private id (atom 0))
+(def ^:private id
+  (atom 0)
+)
 
-(def ^:private topics (atom (sorted-map)))
+(def ^:private topics
+  (atom (sorted-map))
+)
 
 (defn- next-id []
   (swap! id inc)
