@@ -10,7 +10,7 @@
 
 (defn get-all []
   (let [topics (repository/get-all)]
-    (render-page "topics"
+    (render-page "topic/topics"
       {:topic topics
         :has-topics (boolean (not-empty topics))
       }
@@ -20,7 +20,7 @@
 )
 
 (defn create-form []
-  (render-page "topic-create"
+  (render-page "topic/topic-create"
     {:topic {}}
     [:head :navbar]
   )
