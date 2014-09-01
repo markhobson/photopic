@@ -8,6 +8,10 @@
 
 (def topics (atom (sorted-map)))
 
+(defn get-all []
+  (vals @topics)
+)
+
 (defn store [topic]
   (let [topic (conj topic [:id (next-id)])]
     (swap! topics

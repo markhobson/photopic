@@ -9,9 +9,11 @@
 )
 
 (defn topics-response []
-  (render-page "topics"
-    {:topic (vals @repository/topics) :has-topics (not-empty @repository/topics)}
-    [:head :navbar]
+  (let [topics (repository/get-all)]
+    (render-page "topics"
+      {:topic topics :has-topics (boolean (not-empty topics))}
+      [:head :navbar]
+    )
   )
 )
 
