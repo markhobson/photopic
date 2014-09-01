@@ -11,14 +11,14 @@
   )
 )
 
-(defn index-response []
-  (redirect "/topics")
+(defroutes index-routes
+  (GET "/" []
+    (redirect "/topics")
+  )
 )
 
 (defroutes app-routes
-  (GET "/" []
-    (index-response)
-  )
+  index-routes
   topic-routes
 )
 
