@@ -1,4 +1,4 @@
-(ns photopic.topics
+(ns photopic.resource.topics
   (:use
     photopic.repository.topics
     photopic.support.clostache
