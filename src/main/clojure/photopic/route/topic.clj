@@ -1,26 +1,28 @@
 (ns photopic.route.topic
   (:use
     compojure.core
-    photopic.resource.topic
+  )
+  (:require
+    [photopic.resource.topic :as resource]
   )
 )
 
 (defroutes router
   (context "/topics" []
     (GET "/" []
-      (topics-response)
+      (resource/topics-response)
     )
     (POST "/" [name]
-      (topic-create-response {:name name})
+      (resource/topic-create-response {:name name})
     )
     (GET "/create" []
-      (topic-create-form-response)
+      (resource/topic-create-form-response)
     )
   )
   (context "/topic/:id" [id]
     (let [id (read-string id)]
       (DELETE "/" []
-        (topic-delete-response id)
+        (resource/topic-delete-response id)
       )
     )
   )
