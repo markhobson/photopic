@@ -10,19 +10,19 @@
 (defroutes router
   (context "/topics" []
     (GET "/" []
-      (resource/topics-response)
+      (resource/get-all)
     )
     (POST "/" [name]
-      (resource/topic-create-response {:name name})
+      (resource/create {:name name})
     )
     (GET "/create" []
-      (resource/topic-create-form-response)
+      (resource/create-form)
     )
   )
   (context "/topic/:id" [id]
     (let [id (read-string id)]
       (DELETE "/" []
-        (resource/topic-delete-response id)
+        (resource/delete id)
       )
     )
   )

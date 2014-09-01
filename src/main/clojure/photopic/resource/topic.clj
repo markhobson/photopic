@@ -8,7 +8,7 @@
   )
 )
 
-(defn topics-response []
+(defn get-all []
   (let [topics (repository/get-all)]
     (render-page "topics"
       {:topic topics
@@ -19,19 +19,19 @@
   )
 )
 
-(defn topic-create-form-response []
+(defn create-form []
   (render-page "topic-create"
     {:topic {}}
     [:head :navbar]
   )
 )
 
-(defn topic-create-response [topic]
+(defn create [topic]
   (repository/store topic)
   (redirect "/topics")
 )
 
-(defn topic-delete-response [id]
+(defn delete [id]
   (repository/delete id)
   (redirect "/topics")
 )
