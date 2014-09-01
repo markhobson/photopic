@@ -20,7 +20,7 @@
 )
 
 (defn create-form []
-  (render-page "topic/topic-create"
+  (render-page "topic/create"
     {:topic {}}
     [:head :navbar]
   )
