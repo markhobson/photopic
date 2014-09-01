@@ -5,7 +5,7 @@
   )
 )
 
-(defroutes index-routes
+(defroutes router
   (GET "/" []
     (redirect "/topics")
   )
