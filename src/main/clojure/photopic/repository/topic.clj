@@ -1,4 +1,4 @@
-(ns photopic.repository.topics)
+(ns photopic.repository.topic)
 
 (def id (atom 0))
 

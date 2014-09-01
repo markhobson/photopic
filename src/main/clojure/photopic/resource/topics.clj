@@ -1,6 +1,6 @@
 (ns photopic.resource.topics
   (:use
-    photopic.repository.topics
+    photopic.repository.topic
     photopic.support.clostache
     ring.util.response
   )
