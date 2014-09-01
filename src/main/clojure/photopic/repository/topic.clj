@@ -2,11 +2,11 @@
 
 (def ^:private id (atom 0))
 
+(def ^:private topics (atom (sorted-map)))
+
 (defn- next-id []
   (swap! id inc)
 )
-
-(def ^:private topics (atom (sorted-map)))
 
 (defn get-all []
   (vals @topics)
