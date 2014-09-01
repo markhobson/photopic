@@ -14,10 +14,7 @@
   (redirect "/topics")
 )
 
-(defroutes app-routes
-  (GET "/" []
-    (index-response)
-  )
+(defroutes topic-routes
   (context "/topics" []
     (GET "/" []
       (topics-response)
@@ -36,6 +33,13 @@
       )
     )
   )
+)
+
+(defroutes app-routes
+  (GET "/" []
+    (index-response)
+  )
+  topic-routes
 )
 
 (defroutes app
