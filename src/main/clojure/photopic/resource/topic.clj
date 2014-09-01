@@ -11,7 +11,9 @@
 (defn topics-response []
   (let [topics (repository/get-all)]
     (render-page "topics"
-      {:topic topics :has-topics (boolean (not-empty topics))}
+      {:topic topics
+        :has-topics (boolean (not-empty topics))
+      }
       [:head :navbar]
     )
   )
