@@ -2,6 +2,7 @@
   (:use
     compojure.core
     photopic.resource.topic
+    photopic.route.topic
     ring.middleware.content-type
     ring.middleware.params
     ring.middleware.resource
@@ -12,27 +13,6 @@
 
 (defn index-response []
   (redirect "/topics")
-)
-
-(defroutes topic-routes
-  (context "/topics" []
-    (GET "/" []
-      (topics-response)
-    )
-    (POST "/" [name]
-      (topic-create-response {:name name})
-    )
-    (GET "/create" []
-      (topic-create-form-response)
-    )
-  )
-  (context "/topic/:id" [id]
-    (let [id (read-string id)]
-      (DELETE "/" []
-        (topic-delete-response id)
-      )
-    )
-  )
 )
 
 (defroutes app-routes
