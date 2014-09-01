@@ -1,14 +1,16 @@
 (ns photopic.resource.topic
   (:use
-    photopic.repository.topic
     photopic.support.clostache
     ring.util.response
+  )
+  (:require
+    [photopic.repository.topic :as repository]
   )
 )
 
 (defn topics-response []
   (render-page "topics"
-    {:topic (vals @topics) :has-topics (not-empty @topics)}
+    {:topic (vals @repository/topics) :has-topics (not-empty @repository/topics)}
     [:head :navbar]
   )
 )
@@ -21,13 +23,13 @@
 )
 
 (defn topic-create-response [topic]
-  (topic-store
-    (conj topic [:id (next-id)])
+  (repository/store
+    (conj topic [:id (repository/next-id)])
   )
   (redirect "/topics")
 )
 
 (defn topic-delete-response [id]
-  (topic-delete id)
+  (repository/delete id)
   (redirect "/topics")
 )

@@ -8,13 +8,13 @@
 
 (def topics (atom (sorted-map)))
 
-(defn topic-store [topic]
+(defn store [topic]
   (swap! topics
     assoc (get topic :id) topic
   )
 )
 
-(defn topic-delete [id]
+(defn delete [id]
   (swap! topics
     dissoc id
   )
