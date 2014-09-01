@@ -4,7 +4,7 @@
     ring.util.response
   )
   (:require
-    [photopic.repository.topic.memory :as repository]
+    [photopic.repository.topic.datomic :as repository]
   )
 )
 
