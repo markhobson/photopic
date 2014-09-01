@@ -23,8 +23,7 @@
 )
 
 (defroutes app
-  (->
-    app-routes
+  (-> app-routes
     (wrap-params)
     (wrap-resource "META-INF/resources")
     (wrap-content-type)
