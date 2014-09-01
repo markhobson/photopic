@@ -1,7 +1,7 @@
 (ns photopic.routes
   (:use
     compojure.core
-    photopic.resource.topics
+    photopic.resource.topic
     ring.middleware.content-type
     ring.middleware.params
     ring.middleware.resource
